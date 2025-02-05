@@ -1,0 +1,108 @@
+{
+  "name": "dlt-network",
+  "version": "1.0",
+  "channels": {
+    "app-channel-dlt": {
+      "orderers": [
+        "orderer1.orderer-org.konadlt.com",
+        "orderer2.orderer-org.konadlt.com",
+        "orderer3.orderer-org.konadlt.com"
+      ],
+      "peers": [
+        "peer1.konai.konadlt.com",
+        "peer1.org2.konadlt.com",
+        "peer1.org3.konadlt.com"
+      ]
+    }
+  },
+  "organizations": {
+    "konai": {
+      "mspid": "konaiMSP",
+      "peers": ["peer1.konai.konadlt.com"]
+    },
+    "org2": {
+      "mspid": "org2MSP",
+      "peers": ["peer1.org2.konadlt.com"]
+    },
+    "org3": {
+      "mspid": "org3MSP",
+      "peers": ["peer1.org3.konadlt.com"]
+    }
+  },
+  "orderers": {
+    "orderer1.orderer-org.konadlt.com": {
+      "mspid": "orderer-orgMSP",
+      "url": "grpcs://orderer1.orderer-org.konadlt.com:7080",
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer1.orderer-org.konadlt.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIIB7zCCAZWgAwIBAgIUKJ0LMAMFYoIQeS4PLoiahaE5Q1UwCgYIKoZIzj0EAwIw\nVDELMAkGA1UEBhMCS1IxDjAMBgNVBAgTBVNlb3VsMQ4wDAYDVQQKEwVLb25haTEP\nMA0GA1UECxMGQ29tbW9uMRQwEgYDVQQDEwtrb25hZGx0LmNvbTAeFw0yNTAxMDgx\nMTM3MDBaFw00MDAxMDUxMTM3MDBaMFQxCzAJBgNVBAYTAktSMQ4wDAYDVQQIEwVT\nZW91bDEOMAwGA1UEChMFS29uYWkxDzANBgNVBAsTBkNvbW1vbjEUMBIGA1UEAxML\na29uYWRsdC5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAS5u3801s334sY6\nyjUwrVmAhgfo+sgjYYPRDmG5Ej8o0TFBr77PdPppsu9OjnF+V5XOAzxWxp/thBG8\nuPCcyOqio0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQUpOB9vyzRtipzu1Np1BYLzkkkn0IwCgYIKoZIzj0EAwIDSAAwRQIh\nAO6hMT/YC/8rLXfouilx7/4RCNTUfzquw25OO+dci7w3AiB3JjZw+isCAIXVH53/\n23BVvEiEFgekFYYgY7GsG9nPlw==\n-----END CERTIFICATE-----\n"
+      }
+    },
+    "orderer2.orderer-org.konadlt.com": {
+      "mspid": "orderer-orgMSP",
+      "url": "grpcs://orderer2.orderer-org.konadlt.com:7081",
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer2.orderer-org.konadlt.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIIB7zCCAZWgAwIBAgIUKJ0LMAMFYoIQeS4PLoiahaE5Q1UwCgYIKoZIzj0EAwIw\nVDELMAkGA1UEBhMCS1IxDjAMBgNVBAgTBVNlb3VsMQ4wDAYDVQQKEwVLb25haTEP\nMA0GA1UECxMGQ29tbW9uMRQwEgYDVQQDEwtrb25hZGx0LmNvbTAeFw0yNTAxMDgx\nMTM3MDBaFw00MDAxMDUxMTM3MDBaMFQxCzAJBgNVBAYTAktSMQ4wDAYDVQQIEwVT\nZW91bDEOMAwGA1UEChMFS29uYWkxDzANBgNVBAsTBkNvbW1vbjEUMBIGA1UEAxML\na29uYWRsdC5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAS5u3801s334sY6\nyjUwrVmAhgfo+sgjYYPRDmG5Ej8o0TFBr77PdPppsu9OjnF+V5XOAzxWxp/thBG8\nuPCcyOqio0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQUpOB9vyzRtipzu1Np1BYLzkkkn0IwCgYIKoZIzj0EAwIDSAAwRQIh\nAO6hMT/YC/8rLXfouilx7/4RCNTUfzquw25OO+dci7w3AiB3JjZw+isCAIXVH53/\n23BVvEiEFgekFYYgY7GsG9nPlw==\n-----END CERTIFICATE-----\n"
+      }
+    },
+    "orderer3.orderer-org.konadlt.com": {
+      "mspid": "orderer-orgMSP",
+      "url": "grpcs://orderer3.orderer-org.konadlt.com:7082",
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer3.orderer-org.konadlt.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIIB7zCCAZWgAwIBAgIUKJ0LMAMFYoIQeS4PLoiahaE5Q1UwCgYIKoZIzj0EAwIw\nVDELMAkGA1UEBhMCS1IxDjAMBgNVBAgTBVNlb3VsMQ4wDAYDVQQKEwVLb25haTEP\nMA0GA1UECxMGQ29tbW9uMRQwEgYDVQQDEwtrb25hZGx0LmNvbTAeFw0yNTAxMDgx\nMTM3MDBaFw00MDAxMDUxMTM3MDBaMFQxCzAJBgNVBAYTAktSMQ4wDAYDVQQIEwVT\nZW91bDEOMAwGA1UEChMFS29uYWkxDzANBgNVBAsTBkNvbW1vbjEUMBIGA1UEAxML\na29uYWRsdC5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAS5u3801s334sY6\nyjUwrVmAhgfo+sgjYYPRDmG5Ej8o0TFBr77PdPppsu9OjnF+V5XOAzxWxp/thBG8\nuPCcyOqio0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQUpOB9vyzRtipzu1Np1BYLzkkkn0IwCgYIKoZIzj0EAwIDSAAwRQIh\nAO6hMT/YC/8rLXfouilx7/4RCNTUfzquw25OO+dci7w3AiB3JjZw+isCAIXVH53/\n23BVvEiEFgekFYYgY7GsG9nPlw==\n-----END CERTIFICATE-----\n"
+      }
+    }
+  },
+  "peers": {
+    "peer1.konai.konadlt.com": {
+      "url": "grpcs://peer1.konai.konadlt.com:5630",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer1.konai.konadlt.com",
+        "hostnameOverride": "peer1.konai.konadlt.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIIB7zCCAZWgAwIBAgIUKJ0LMAMFYoIQeS4PLoiahaE5Q1UwCgYIKoZIzj0EAwIw\nVDELMAkGA1UEBhMCS1IxDjAMBgNVBAgTBVNlb3VsMQ4wDAYDVQQKEwVLb25haTEP\nMA0GA1UECxMGQ29tbW9uMRQwEgYDVQQDEwtrb25hZGx0LmNvbTAeFw0yNTAxMDgx\nMTM3MDBaFw00MDAxMDUxMTM3MDBaMFQxCzAJBgNVBAYTAktSMQ4wDAYDVQQIEwVT\nZW91bDEOMAwGA1UEChMFS29uYWkxDzANBgNVBAsTBkNvbW1vbjEUMBIGA1UEAxML\na29uYWRsdC5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAS5u3801s334sY6\nyjUwrVmAhgfo+sgjYYPRDmG5Ej8o0TFBr77PdPppsu9OjnF+V5XOAzxWxp/thBG8\nuPCcyOqio0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQUpOB9vyzRtipzu1Np1BYLzkkkn0IwCgYIKoZIzj0EAwIDSAAwRQIh\nAO6hMT/YC/8rLXfouilx7/4RCNTUfzquw25OO+dci7w3AiB3JjZw+isCAIXVH53/\n23BVvEiEFgekFYYgY7GsG9nPlw==\n-----END CERTIFICATE-----\n"
+      }
+    },
+    "peer1.org2.konadlt.com": {
+      "url": "grpcs://peer1.org2.konadlt.com:5640",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer1.org2.konadlt.com",
+        "hostnameOverride": "peer1.org2.konadlt.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIIB7zCCAZWgAwIBAgIUKJ0LMAMFYoIQeS4PLoiahaE5Q1UwCgYIKoZIzj0EAwIw\nVDELMAkGA1UEBhMCS1IxDjAMBgNVBAgTBVNlb3VsMQ4wDAYDVQQKEwVLb25haTEP\nMA0GA1UECxMGQ29tbW9uMRQwEgYDVQQDEwtrb25hZGx0LmNvbTAeFw0yNTAxMDgx\nMTM3MDBaFw00MDAxMDUxMTM3MDBaMFQxCzAJBgNVBAYTAktSMQ4wDAYDVQQIEwVT\nZW91bDEOMAwGA1UEChMFS29uYWkxDzANBgNVBAsTBkNvbW1vbjEUMBIGA1UEAxML\na29uYWRsdC5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAS5u3801s334sY6\nyjUwrVmAhgfo+sgjYYPRDmG5Ej8o0TFBr77PdPppsu9OjnF+V5XOAzxWxp/thBG8\nuPCcyOqio0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQUpOB9vyzRtipzu1Np1BYLzkkkn0IwCgYIKoZIzj0EAwIDSAAwRQIh\nAO6hMT/YC/8rLXfouilx7/4RCNTUfzquw25OO+dci7w3AiB3JjZw+isCAIXVH53/\n23BVvEiEFgekFYYgY7GsG9nPlw==\n-----END CERTIFICATE-----\n"
+      }
+    },
+    "peer1.org3.konadlt.com": {
+      "url": "grpcs://peer1.org3.konadlt.com:5650",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer1.org3.konadlt.com",
+        "hostnameOverride": "peer1.org3.konadlt.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIIB7zCCAZWgAwIBAgIUKJ0LMAMFYoIQeS4PLoiahaE5Q1UwCgYIKoZIzj0EAwIw\nVDELMAkGA1UEBhMCS1IxDjAMBgNVBAgTBVNlb3VsMQ4wDAYDVQQKEwVLb25haTEP\nMA0GA1UECxMGQ29tbW9uMRQwEgYDVQQDEwtrb25hZGx0LmNvbTAeFw0yNTAxMDgx\nMTM3MDBaFw00MDAxMDUxMTM3MDBaMFQxCzAJBgNVBAYTAktSMQ4wDAYDVQQIEwVT\nZW91bDEOMAwGA1UEChMFS29uYWkxDzANBgNVBAsTBkNvbW1vbjEUMBIGA1UEAxML\na29uYWRsdC5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAS5u3801s334sY6\nyjUwrVmAhgfo+sgjYYPRDmG5Ej8o0TFBr77PdPppsu9OjnF+V5XOAzxWxp/thBG8\nuPCcyOqio0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQUpOB9vyzRtipzu1Np1BYLzkkkn0IwCgYIKoZIzj0EAwIDSAAwRQIh\nAO6hMT/YC/8rLXfouilx7/4RCNTUfzquw25OO+dci7w3AiB3JjZw+isCAIXVH53/\n23BVvEiEFgekFYYgY7GsG9nPlw==\n-----END CERTIFICATE-----\n"
+      }
+    }
+  },
+  "certificateAuthorities": {
+    "konadlt-ca.konadlt.com": {
+      "url": "https://konadlt-ca.konadlt.com:1200",
+      "caName": "konadlt-ca.konadlt.com",
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIICVDCCAfqgAwIBAgIURiGSfXP1A3Ex9ZEvaViQzHPvi7gwCgYIKoZIzj0EAwIw\nVDELMAkGA1UEBhMCS1IxDjAMBgNVBAgTBVNlb3VsMQ4wDAYDVQQKEwVLb25haTEP\nMA0GA1UECxMGQ29tbW9uMRQwEgYDVQQDEwtrb25hZGx0LmNvbTAeFw0yNTAxMDgx\nMTM3MDBaFw00MDAxMDUxMTM3MDBaMFUxCzAJBgNVBAYTAktSMQ4wDAYDVQQIEwVT\nZW91bDEOMAwGA1UEChMFS29uYWkxDzANBgNVBAsTBkNvbW1vbjEVMBMGA1UEAxMM\nMmUyYzRlZDAxZTY3MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESbpFAXiDE5Yr\naHMzaoNtmMvvytaU06nVBiGsQ7mtMPof4X1Rpu3srvStNJ6QopUBn9az/iiSGjnz\nIrZ3ydzLd6OBqDCBpTAOBgNVHQ8BAf8EBAMCA6gwHQYDVR0lBBYwFAYIKwYBBQUH\nAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0OBBYEFEKHOFooOFJBBQe9\nQew7+MFHp6V7MB8GA1UdIwQYMBaAFKTgfb8s0bYqc7tTadQWC85JJJ9CMCYGA1Ud\nEQQfMB2CEGlwLTE3Mi0zMy00NC0xMDCCCWxvY2FsaG9zdDAKBggqhkjOPQQDAgNI\nADBFAiEAgdtt2MrDTbjTfPryi3E3QywtkFBzZ9UMhVU7GbI2vkICIBCgX8D6XuOF\nX3FMxZ2CfII9hNtK6FF6+uZj9Rfs8PaH\n-----END CERTIFICATE-----\n"
+      },
+      "httpOptions": {
+        "verify": false
+      }
+    }
+  }
+}

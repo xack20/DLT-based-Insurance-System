@@ -1,0 +1,117 @@
+{
+  "name": "ncpprod-net",
+  "version": "1.0",
+  "client": {
+    "organization": "konai-prod",
+    "credentialStore": {
+      "path": "../network_resources/ncpprod-net/config/credentials/konai-prod",
+      "cryptoStore": {
+        "path": "../network_resources/ncpprod-net/config/credentials/konai-prod/crypto_store"
+      }
+    }
+  },
+  "channels": {
+    "app-channel-ncp-prod": {
+      "orderers": [
+        "orderer1.orderer-org-ncp-prod.konancp.com",
+        "orderer2.orderer-org-ncp-prod.konancp.com",
+        "orderer3.orderer-org-ncp-prod.konancp.com"
+      ],
+      "peers": [
+        "peer1.konai-prod.konancp.com",
+        "peer1.org2-prod.konancp.com",
+        "peer1.org3-prod.konancp.com"
+      ]
+    }
+  },
+  "organizations": {
+    "konai-prod": {
+      "mspid": "konai-prodMSP",
+      "peers": ["peer1.konai-prod.konancp.com"]
+    },
+    "org2-prod": {
+      "mspid": "org2-prodMSP",
+      "peers": ["peer1.org2-prod.konancp.com"]
+    },
+    "org3-prod": {
+      "mspid": "org3-prodMSP",
+      "peers": ["peer1.org3-prod.konancp.com"]
+    }
+  },
+  "orderers": {
+    "orderer1.orderer-org-ncp-prod.konancp.com": {
+      "url": "grpcs://orderer1.orderer-org-ncp-prod.konancp.com:7080",
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer1.orderer-org-ncp-prod.konancp.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIIB7jCCAZWgAwIBAgIUJHkRE0wWTt+IzL4hUqu9ApuLj7gwCgYIKoZIzj0EAwIw\nVDELMAkGA1UEBhMCS1IxDjAMBgNVBAgTBVNlb3VsMQ4wDAYDVQQKEwVLb25haTEP\nMA0GA1UECxMGQ29tbW9uMRQwEgYDVQQDEwtrb25hbmNwLmNvbTAeFw0yMzA1MDkx\nMDEyMDBaFw0zODA1MDUxMDEyMDBaMFQxCzAJBgNVBAYTAktSMQ4wDAYDVQQIEwVT\nZW91bDEOMAwGA1UEChMFS29uYWkxDzANBgNVBAsTBkNvbW1vbjEUMBIGA1UEAxML\na29uYW5jcC5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASvUYEpLJA6LBmx\ntJWjaqmQ9N4AoJPFgIQDDN6n5NKoyDVIYgsh6ireqZb4qdLELDDpsZAYaa+38ioj\nxc3tD4xYo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQUZi+Kv6ChF2muKfSOSOtIaL8F6/gwCgYIKoZIzj0EAwIDRwAwRAIg\nRBmxsFv9UEY+b9cXdW1Bh9zzeml6evC/co1wBieBCUoCIDQreHFdcqBul0nbIJZi\nM/h51SxIlqK5heqS4S7jzS+l\n-----END CERTIFICATE-----\n"
+      }
+    },
+    "orderer2.orderer-org-ncp-prod.konancp.com": {
+      "url": "grpcs://orderer2.orderer-org-ncp-prod.konancp.com:7081",
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer2.orderer-org-ncp-prod.konancp.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIIB7jCCAZWgAwIBAgIUJHkRE0wWTt+IzL4hUqu9ApuLj7gwCgYIKoZIzj0EAwIw\nVDELMAkGA1UEBhMCS1IxDjAMBgNVBAgTBVNlb3VsMQ4wDAYDVQQKEwVLb25haTEP\nMA0GA1UECxMGQ29tbW9uMRQwEgYDVQQDEwtrb25hbmNwLmNvbTAeFw0yMzA1MDkx\nMDEyMDBaFw0zODA1MDUxMDEyMDBaMFQxCzAJBgNVBAYTAktSMQ4wDAYDVQQIEwVT\nZW91bDEOMAwGA1UEChMFS29uYWkxDzANBgNVBAsTBkNvbW1vbjEUMBIGA1UEAxML\na29uYW5jcC5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASvUYEpLJA6LBmx\ntJWjaqmQ9N4AoJPFgIQDDN6n5NKoyDVIYgsh6ireqZb4qdLELDDpsZAYaa+38ioj\nxc3tD4xYo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQUZi+Kv6ChF2muKfSOSOtIaL8F6/gwCgYIKoZIzj0EAwIDRwAwRAIg\nRBmxsFv9UEY+b9cXdW1Bh9zzeml6evC/co1wBieBCUoCIDQreHFdcqBul0nbIJZi\nM/h51SxIlqK5heqS4S7jzS+l\n-----END CERTIFICATE-----\n"
+      }
+    },
+    "orderer3.orderer-org-ncp-prod.konancp.com": {
+      "url": "grpcs://orderer3.orderer-org-ncp-prod.konancp.com:7082",
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer3.orderer-org-ncp-prod.konancp.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIIB7jCCAZWgAwIBAgIUJHkRE0wWTt+IzL4hUqu9ApuLj7gwCgYIKoZIzj0EAwIw\nVDELMAkGA1UEBhMCS1IxDjAMBgNVBAgTBVNlb3VsMQ4wDAYDVQQKEwVLb25haTEP\nMA0GA1UECxMGQ29tbW9uMRQwEgYDVQQDEwtrb25hbmNwLmNvbTAeFw0yMzA1MDkx\nMDEyMDBaFw0zODA1MDUxMDEyMDBaMFQxCzAJBgNVBAYTAktSMQ4wDAYDVQQIEwVT\nZW91bDEOMAwGA1UEChMFS29uYWkxDzANBgNVBAsTBkNvbW1vbjEUMBIGA1UEAxML\na29uYW5jcC5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASvUYEpLJA6LBmx\ntJWjaqmQ9N4AoJPFgIQDDN6n5NKoyDVIYgsh6ireqZb4qdLELDDpsZAYaa+38ioj\nxc3tD4xYo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQUZi+Kv6ChF2muKfSOSOtIaL8F6/gwCgYIKoZIzj0EAwIDRwAwRAIg\nRBmxsFv9UEY+b9cXdW1Bh9zzeml6evC/co1wBieBCUoCIDQreHFdcqBul0nbIJZi\nM/h51SxIlqK5heqS4S7jzS+l\n-----END CERTIFICATE-----\n"
+      }
+    }
+  },
+  "peers": {
+    "peer1.konai-prod.konancp.com": {
+      "url": "grpcs://peer1.konai-prod.konancp.com:5760",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer1.konai-prod.konancp.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIIB7jCCAZWgAwIBAgIUJHkRE0wWTt+IzL4hUqu9ApuLj7gwCgYIKoZIzj0EAwIw\nVDELMAkGA1UEBhMCS1IxDjAMBgNVBAgTBVNlb3VsMQ4wDAYDVQQKEwVLb25haTEP\nMA0GA1UECxMGQ29tbW9uMRQwEgYDVQQDEwtrb25hbmNwLmNvbTAeFw0yMzA1MDkx\nMDEyMDBaFw0zODA1MDUxMDEyMDBaMFQxCzAJBgNVBAYTAktSMQ4wDAYDVQQIEwVT\nZW91bDEOMAwGA1UEChMFS29uYWkxDzANBgNVBAsTBkNvbW1vbjEUMBIGA1UEAxML\na29uYW5jcC5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASvUYEpLJA6LBmx\ntJWjaqmQ9N4AoJPFgIQDDN6n5NKoyDVIYgsh6ireqZb4qdLELDDpsZAYaa+38ioj\nxc3tD4xYo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQUZi+Kv6ChF2muKfSOSOtIaL8F6/gwCgYIKoZIzj0EAwIDRwAwRAIg\nRBmxsFv9UEY+b9cXdW1Bh9zzeml6evC/co1wBieBCUoCIDQreHFdcqBul0nbIJZi\nM/h51SxIlqK5heqS4S7jzS+l\n-----END CERTIFICATE-----\n"
+      }
+    },
+    "peer1.org2-prod.konancp.com": {
+      "url": "grpcs://peer1.org2-prod.konancp.com:5770",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer1.org2-prod.konancp.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIIB7jCCAZWgAwIBAgIUJHkRE0wWTt+IzL4hUqu9ApuLj7gwCgYIKoZIzj0EAwIw\nVDELMAkGA1UEBhMCS1IxDjAMBgNVBAgTBVNlb3VsMQ4wDAYDVQQKEwVLb25haTEP\nMA0GA1UECxMGQ29tbW9uMRQwEgYDVQQDEwtrb25hbmNwLmNvbTAeFw0yMzA1MDkx\nMDEyMDBaFw0zODA1MDUxMDEyMDBaMFQxCzAJBgNVBAYTAktSMQ4wDAYDVQQIEwVT\nZW91bDEOMAwGA1UEChMFS29uYWkxDzANBgNVBAsTBkNvbW1vbjEUMBIGA1UEAxML\na29uYW5jcC5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASvUYEpLJA6LBmx\ntJWjaqmQ9N4AoJPFgIQDDN6n5NKoyDVIYgsh6ireqZb4qdLELDDpsZAYaa+38ioj\nxc3tD4xYo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQUZi+Kv6ChF2muKfSOSOtIaL8F6/gwCgYIKoZIzj0EAwIDRwAwRAIg\nRBmxsFv9UEY+b9cXdW1Bh9zzeml6evC/co1wBieBCUoCIDQreHFdcqBul0nbIJZi\nM/h51SxIlqK5heqS4S7jzS+l\n-----END CERTIFICATE-----\n"
+      }
+    },
+    "peer1.org3-prod.konancp.com": {
+      "url": "grpcs://peer1.org3-prod.konancp.com:5780",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer1.org3-prod.konancp.com"
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIIB7jCCAZWgAwIBAgIUJHkRE0wWTt+IzL4hUqu9ApuLj7gwCgYIKoZIzj0EAwIw\nVDELMAkGA1UEBhMCS1IxDjAMBgNVBAgTBVNlb3VsMQ4wDAYDVQQKEwVLb25haTEP\nMA0GA1UECxMGQ29tbW9uMRQwEgYDVQQDEwtrb25hbmNwLmNvbTAeFw0yMzA1MDkx\nMDEyMDBaFw0zODA1MDUxMDEyMDBaMFQxCzAJBgNVBAYTAktSMQ4wDAYDVQQIEwVT\nZW91bDEOMAwGA1UEChMFS29uYWkxDzANBgNVBAsTBkNvbW1vbjEUMBIGA1UEAxML\na29uYW5jcC5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASvUYEpLJA6LBmx\ntJWjaqmQ9N4AoJPFgIQDDN6n5NKoyDVIYgsh6ireqZb4qdLELDDpsZAYaa+38ioj\nxc3tD4xYo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQUZi+Kv6ChF2muKfSOSOtIaL8F6/gwCgYIKoZIzj0EAwIDRwAwRAIg\nRBmxsFv9UEY+b9cXdW1Bh9zzeml6evC/co1wBieBCUoCIDQreHFdcqBul0nbIJZi\nM/h51SxIlqK5heqS4S7jzS+l\n-----END CERTIFICATE-----\n"
+      }
+    }
+  },
+  "certificateAuthorities": {
+    "konancpprod-ca.konancp.com": {
+      "url": "https://konancpprod-ca.konancp.com:1400",
+      "httpOptions": {
+        "verify": false
+      },
+      "tlsCACerts": {
+        "pem": "-----BEGIN CERTIFICATE-----\nMIICVDCCAfugAwIBAgIUQouCw+8CDkw8i7fxfivq1Cdm6xYwCgYIKoZIzj0EAwIw\nVDELMAkGA1UEBhMCS1IxDjAMBgNVBAgTBVNlb3VsMQ4wDAYDVQQKEwVLb25haTEP\nMA0GA1UECxMGQ29tbW9uMRQwEgYDVQQDEwtrb25hbmNwLmNvbTAeFw0yMzA1MDkx\nMDEyMDBaFw0yNDA1MDgxMDEyMDBaMFUxCzAJBgNVBAYTAktSMQ4wDAYDVQQIEwVT\nZW91bDEOMAwGA1UEChMFS29uYWkxDzANBgNVBAsTBkNvbW1vbjEVMBMGA1UEAxMM\nNWY5NDJlM2EwYTBjMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEUVMJRQQj4saC\nk1szD6sk1UOdu8zhxo99/3BYgZ0at26Ostx+sXiibm2zQY+4nuYpID1yqrXCYfDm\nJmsut/xObqOBqTCBpjAOBgNVHQ8BAf8EBAMCA6gwHQYDVR0lBBYwFAYIKwYBBQUH\nAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0OBBYEFKxmtMTXqcvR1W/8\nMJsV2FEofMkfMB8GA1UdIwQYMBaAFGYvir+goRdprin0jkjrSGi/Bev4MCcGA1Ud\nEQQgMB6CEWlwLTE3Mi0xMjItMTEtMTIwgglsb2NhbGhvc3QwCgYIKoZIzj0EAwID\nRwAwRAIgXsrrGfaFKrX/rNcF9lRpc/avMHgvp/mnVXlQeV3aatgCIEqKApA47m2s\nnwUWX6DL8uO3O3qGAUaAVENNzDYjHeD6\n-----END CERTIFICATE-----\n"
+      },
+      "registrar": [
+        {
+          "enrollId": "konancpprod-ca-admin",
+          "enrollSecret": "Kbc@1234"
+        }
+      ],
+      "caName": "konancpprod-ca.konancp.com"
+    }
+  }
+}

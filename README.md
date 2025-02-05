@@ -105,6 +105,141 @@ This document outlines the various flows within the insurance system, including 
 
 ---
 
+
+
+# Hyperledger Fabric Network Architecture for Insurance System
+
+This document outlines the **Hyperledger Fabric network architecture** and its components for the insurance system. The architecture is designed to ensure **security**, **scalability**, and **confidentiality** while meeting the unique requirements of the insurance industry.
+
+---
+
+## Key Components
+
+### 1. Organizations
+Organizations represent the entities participating in the network. For this project, the following organizations are relevant:
+
+- **InsuranceOrg**: The insurance company issuing policies and managing claims.
+- **HospitalOrg**: Hospitals and clinics verifying policyholder status and submitting claims.
+- **RegulatorOrg** (Optional): Regulators for auditing and compliance.
+
+Each organization has its own **Membership Service Provider (MSP)** to manage identities and permissions.
+
+---
+
+### 2. Peer Nodes
+Peer nodes host the ledger and chaincode (smart contracts). Each organization can have one or more peers:
+
+- **InsuranceOrg Peers**:
+  - **Endorsing Peers**: Execute chaincode for policy issuance, verification, and claims management.
+  - **Committing Peers**: Maintain the ledger for all transactions.
+  - **Anchor Peers**: Facilitate communication with other organizations.
+
+- **HospitalOrg Peers**:
+  - **Endorsing Peers**: Execute chaincode for policy verification and claims submission.
+  - **Committing Peers**: Maintain a copy of the ledger relevant to their transactions.
+
+- **RegulatorOrg Peers** (Optional):
+  - **Committing Peers**: Maintain a read-only copy of the ledger for auditing purposes.
+
+---
+
+### 3. Certificate Authorities (CA)
+Each organization has its own **Certificate Authority (CA)** to issue certificates for identity management:
+
+- **InsuranceOrg CA**: Issues certificates for InsuranceOrg members.
+- **HospitalOrg CA**: Issues certificates for HospitalOrg members.
+- **RegulatorOrg CA** (Optional): Issues certificates for RegulatorOrg members.
+
+CAs ensure that only authorized participants can join the network and perform transactions.
+
+---
+
+### 4. Orderer Nodes
+Orderer nodes are responsible for **transaction ordering** and **consensus**. They ensure that all transactions are added to the ledger in the correct order.
+
+- **Orderer Service**: A cluster of orderer nodes using a **crash fault-tolerant (CFT)** consensus algorithm (e.g., Raft).
+- **Orderer Organizations**: Typically managed by a consortium of organizations or a neutral third party.
+
+---
+
+### 5. Channels
+Channels are private sub-networks within the blockchain that allow confidential transactions between specific organizations:
+
+- **PolicyChannel**: For transactions between **InsuranceOrg** and **HospitalOrg** (e.g., policy issuance, verification, and claims).
+- **AuditChannel** (Optional): For transactions involving **RegulatorOrg** (e.g., auditing and compliance).
+
+Each channel has its own ledger, and only the organizations participating in the channel can access its data.
+
+---
+
+### 6. Chaincode (Smart Contracts)
+Chaincode implements the business logic of the insurance system. The following chaincodes are required:
+
+- **PolicyIssuanceChaincode**: Manages policy creation and updates.
+- **PolicyVerificationChaincode**: Handles real-time verification requests.
+- **ClaimsManagementChaincode**: Tracks claims submission and approval.
+
+Chaincode is installed on the endorsing peers of the relevant organizations and instantiated on the channels.
+
+---
+
+### 7. Off-Chain Components
+- **Encrypted Database**: Stores sensitive data like personal details, claims history, and medical records.
+- **IPFS/Cloud Storage**: Stores policy documents and ID verification files.
+- **APIs**:
+  - **Blockchain API**: Connects the frontend and backend to the blockchain network.
+  - **Provider API**: Integrates with hospitals/clinics for verification.
+  - **Payment Gateway API**: Links premium payments to blockchain records.
+
+---
+
+## Network Architecture Diagram
+
+```plaintext
++-------------------+       +-------------------+       +-------------------+
+| InsuranceOrg      |       | HospitalOrg       |       | RegulatorOrg      |
+| (Insurance Company)|       | (Hospitals/Clinics)|       | (Optional)        |
++-------------------+       +-------------------+       +-------------------+
+        |                           |                           |
+        |                           |                           |
+        v                           v                           v
++-------------------+       +-------------------+       +-------------------+
+| InsuranceOrg CA   |       | HospitalOrg CA    |       | RegulatorOrg CA   |
++-------------------+       +-------------------+       +-------------------+
+        |                           |                           |
+        |                           |                           |
+        v                           v                           v
++-------------------+       +-------------------+       +-------------------+
+| InsuranceOrg Peers|       | HospitalOrg Peers |       | RegulatorOrg Peers|
+| - Endorsing       |       | - Endorsing       |       | - Committing      |
+| - Committing      |       | - Committing      |       | (Read-Only)       |
+| - Anchor          |       | - Anchor          |       +-------------------+
++-------------------+       +-------------------+
+        |                           |
+        |                           |
+        v                           v
++---------------------------------------------------------------+
+| Orderer Service                                                |
+| - Orderer Nodes (Raft Consensus)                               |
++---------------------------------------------------------------+
+        |                           |
+        |                           |
+        v                           v
++-------------------+       +-------------------+
+| PolicyChannel     |       | AuditChannel      |
+| (InsuranceOrg &   |       | (InsuranceOrg &   |
+| HospitalOrg)      |       | RegulatorOrg)     |
++-------------------+       +-------------------+
+        |                           |
+        |                           |
+        v                           v
++-------------------+       +-------------------+
+| Off-Chain Storage |       | Off-Chain Storage |
+| - Encrypted DB    |       | - IPFS/Cloud      |
++-------------------+       +-------------------+
+
+
+
 ### 📞 Contact
 
 For more details, reach out to the development team or check the documentation.
